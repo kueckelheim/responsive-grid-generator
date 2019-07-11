@@ -3,9 +3,35 @@ import "./grid.scss";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+import { updateAreas } from "../../../actions/selection.js";
+
 class Overlay extends React.PureComponent {
   static propTypes = {
     areas: PropTypes.array.isRequired
+  };
+
+  handleClose = evt => {
+    // get area name/id that has to be removed
+    const name = evt.currentTarget.dataset.name;
+    // get areas
+    var areas = [...this.props.areas];
+    // get index of area with the respective name
+    const names = areas.map(x => x.name);
+    const index = names.findIndex(x => x === name);
+    // remove respective area from areas-array
+    areas.splice(index, 1);
+    // update store / call reducer
+    this.props.updateAreas(areas);
+  };
+  onChange = e => {
+    // get index of area
+    const index = e.target.name;
+    // copy of areas
+    var areas = [...this.props.areas];
+    // change name
+    areas[index].name = e.target.value;
+    // update store
+    this.props.updateAreas(areas);
   };
 
   render() {
@@ -42,7 +68,21 @@ class Overlay extends React.PureComponent {
           background: x.color
         };
         return (
-          <div className="overlayItem" style={overlayItemStyle} key={index} />
+          <div className="overlayItem" style={overlayItemStyle} key={index}>
+            <div
+              className="close"
+              onClick={this.handleClose}
+              data-name={x.name}
+            />
+            <input
+              name={index}
+              component="input"
+              type="text"
+              index={index}
+              onChange={this.onChange}
+              value={this.props.areas[index].name}
+            />
+          </div>
         );
       });
     }
@@ -59,4 +99,7 @@ const mapStateToProps = state => ({
   areas: state.selected.areas
 });
 
-export default connect(mapStateToProps)(Overlay);
+export default connect(
+  mapStateToProps,
+  { updateAreas }
+)(Overlay);

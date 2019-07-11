@@ -29,7 +29,9 @@ class Grid extends React.PureComponent {
     selectedElements = [].concat.apply([], selectedElements);
     // check if selection includes already selected elements. If not, save new selection to store
     if (!selectedElements.some(x => indexes.includes(x))) {
-      this.props.updateSelection(indexes);
+      // generate name for new area
+      const name = "area" + (this.props.areas.length + 1);
+      this.props.updateSelection(indexes, name);
     }
     return null;
   };

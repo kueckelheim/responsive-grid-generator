@@ -1,1 +1,2 @@
 export const UPDATE_SELECTION = "UPDATE_SELECTION";
+export const UPDATE_AREAS = "UPDATE_AREAS";
