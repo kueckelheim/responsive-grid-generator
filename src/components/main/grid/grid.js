@@ -6,11 +6,13 @@ import Overlay from "./overlay.js";
 
 import { connect } from "react-redux";
 import { updateSelection } from "../../../actions/selection.js";
+import { updateColumns } from "../../../actions/config.js";
 import PropTypes from "prop-types";
 
 class Grid extends React.PureComponent {
   static propTypes = {
     areas: PropTypes.array.isRequired
+    // numberColumns: PropTypes.number.isRequired
   };
 
   constructor() {
@@ -31,7 +33,11 @@ class Grid extends React.PureComponent {
     if (!selectedElements.some(x => indexes.includes(x))) {
       // generate name for new area
       const name = "area" + (this.props.areas.length + 1);
-      this.props.updateSelection(indexes, name);
+      this.props.updateSelection(
+        indexes,
+        name,
+        this.props.config.numberColumns
+      );
     }
     return null;
   };
@@ -58,26 +64,17 @@ class Grid extends React.PureComponent {
   }
 
   render() {
+    const numberColumns = this.props.config.numberColumns;
+
     // https://codepen.io/michellebarker/post/building-an-aspect-ratio-css-grid-layout
-    // make number of columns dependent on viewport width
-    var viewportWidth =
-      window.innerWidth || document.documentElement.clientWidth;
-
-    var gridWidth = 99 + "vw";
-    if (viewportWidth > 1000) {
-      gridWidth = 50 + "vw";
-    }
-
-    const numberColumns = 15;
-
     const gridStyle = {
       gridTemplateColumns: "repeat(" + numberColumns + ", 1fr)",
-      gridTemplateRows: "repeat(" + numberColumns + ", 1fr)",
-      gridAutoRows: gridWidth + "/" + numberColumns
+      gridTemplateRows: "repeat(" + Math.round(numberColumns * 1.3) + ", 1fr)",
+      gridAutoRows: this.props.gridWidth + "/" + numberColumns
     };
 
     return (
-      <div className="gridContainer" style={{ width: gridWidth }}>
+      <React.Fragment>
         <div
           className="grid"
           ref={ref => {
@@ -86,24 +83,25 @@ class Grid extends React.PureComponent {
           }}
           style={gridStyle}
         >
-          {Array.from(Array(numberColumns * numberColumns).keys()).map(
-            index => (
-              <div className="gridItem" key={index} ref={this.addElementRef} />
-            )
-          )}
+          {Array.from(
+            Array(numberColumns * Math.round(numberColumns * 1.3)).keys()
+          ).map(index => (
+            <div className="gridItem" key={index} ref={this.addElementRef} />
+          ))}
           {this.renderSelection()}
         </div>
         <Overlay numberColumns={numberColumns} gridStyle={gridStyle} />
-      </div>
+      </React.Fragment>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  areas: state.selected.areas
+  areas: state.selected.areas,
+  config: state.config
 });
 
 export default connect(
   mapStateToProps,
-  { updateSelection }
+  { updateSelection, updateColumns }
 )(Grid);

@@ -43,21 +43,9 @@ class Overlay extends React.PureComponent {
       // for each selected area one overlayItem
       overlayItems = areas.map((x, index) => {
         // get row numbers
-        const rows = x.selectedElements.map(y => {
-          const z = y / this.props.numberColumns;
-          if (Number.isInteger(z)) {
-            return z + 1;
-          } else {
-            return Math.ceil(z);
-          }
-        });
+        const rows = x.rows;
         // get column numbers
-        const columns = x.selectedElements.map(
-          y =>
-            Math.round(
-              ((y / this.props.numberColumns) % 1) * this.props.numberColumns
-            ) + 1
-        );
+        const columns = x.columns;
         // style the new overlayItem
         const overlayItemStyle = {
           display: "initial",
