@@ -6,27 +6,95 @@ import PropTypes from "prop-types";
 
 class ShowCase extends React.PureComponent {
   static propTypes = {
-    areas: PropTypes.array.isRequired
+    areas: PropTypes.array.isRequired,
+    config: PropTypes.object.isRequired
   };
 
   render() {
-    // get total selected elements
-    var allSelected = this.props.areas.map(x => x.selectedElements);
-    // merges array of arrays
-    allSelected = [].concat.apply([], allSelected);
-    console.log(allSelected);
-
+    var showCaseStyle, gridItems;
+    //  replace later with config value
+    const ratio = this.props.config.ratioRows / this.props.config.ratioCols;
+    // if selection has been made, create gridSystem
+    if (this.props.areas.length > 0) {
+      // number of columns = maximum selected column - minimum
+      // get total selected columns and rows
+      var totalColumns = this.props.areas.map(x => x.columns);
+      var totalRows = this.props.areas.map(x => x.rows);
+      // merge array of arrays
+      totalColumns = [].concat.apply([], totalColumns);
+      totalRows = [].concat.apply([], totalRows);
+      // get minimums and maximums
+      var maxCol, minCol, maxRow, minRow, i, ii;
+      for (i = 0; i < totalColumns.length; i++) {
+        if (maxCol == null) {
+          maxCol = totalColumns[i];
+        } else {
+          if (totalColumns[i] > maxCol) {
+            maxCol = totalColumns[i];
+          }
+        }
+        if (minCol == null) {
+          minCol = totalColumns[i];
+        } else {
+          if (totalColumns[i] < minCol) {
+            minCol = totalColumns[i];
+          }
+        }
+      }
+      for (ii = 0; ii < totalRows.length; ii++) {
+        if (maxRow == null) {
+          maxRow = totalRows[ii];
+        } else {
+          if (totalRows[ii] > maxRow) {
+            maxRow = totalRows[ii];
+          }
+        }
+        if (minRow == null) {
+          minRow = totalRows[ii];
+        } else {
+          if (totalRows[ii] < minRow) {
+            minRow = totalRows[ii];
+          }
+        }
+      }
+      // get number of columns and rows
+      const numberCols = maxCol - minCol + 1;
+      const numberRows = maxRow - minRow + 1;
+      // https://codepen.io/michellebarker/post/building-an-aspect-ratio-css-grid-layout
+      showCaseStyle = {
+        gridTemplateColumns: "repeat(" + numberCols + ", 1fr)",
+        // height depends on ratio
+        gridTemplateRows:
+          "repeat(" + numberRows + ", " + 100 / (numberCols * ratio) + "%  )"
+      };
+      // generate and style grid items according to selected areas
+      // their start and end points now depend on the minimum and maximum of the selected grids
+      gridItems = this.props.areas.map((x, index) => (
+        <div
+          style={{
+            display: "initial",
+            gridRowStart: Math.min(...x.rows) - (minRow - 1),
+            gridRowEnd: Math.max(...x.rows) + 1 - (minRow - 1),
+            gridColumnStart: Math.min(...x.columns) - (minCol - 1),
+            gridColumnEnd: Math.max(...x.columns) + 1 - (minCol - 1),
+            background: "white",
+            border: "1px solid black"
+          }}
+          key={index}
+        />
+      ));
+    }
     return (
-      <div className="showCase">
-        {/* pass number of elements inline style */}
-        {/* add number of divs according to number of areas */}
+      <div className="showCase" style={showCaseStyle}>
+        {gridItems}
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  areas: state.selected.areas
+  areas: state.selected.areas,
+  config: state.config
 });
 
 export default connect(mapStateToProps)(ShowCase);

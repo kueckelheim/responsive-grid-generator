@@ -1,9 +1,6 @@
 .main {
   display: grid;
   grid-template-columns: 1fr;
-  .showContainer {
-    padding: 10px;
-  }
 }
 @media (min-width: 1000px) {
   .main {

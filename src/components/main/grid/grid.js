@@ -6,13 +6,12 @@ import Overlay from "./overlay.js";
 
 import { connect } from "react-redux";
 import { updateSelection } from "../../../actions/selection.js";
-import { updateColumns } from "../../../actions/config.js";
 import PropTypes from "prop-types";
 
 class Grid extends React.PureComponent {
   static propTypes = {
-    areas: PropTypes.array.isRequired
-    // numberColumns: PropTypes.number.isRequired
+    areas: PropTypes.array.isRequired,
+    config: PropTypes.object.isRequired
   };
 
   constructor() {
@@ -69,7 +68,7 @@ class Grid extends React.PureComponent {
     // https://codepen.io/michellebarker/post/building-an-aspect-ratio-css-grid-layout
     const gridStyle = {
       gridTemplateColumns: "repeat(" + numberColumns + ", 1fr)",
-      gridTemplateRows: "repeat(" + Math.round(numberColumns * 1.3) + ", 1fr)",
+      gridTemplateRows: "repeat(" + Math.round(numberColumns * 1.4) + ", 1fr)",
       gridAutoRows: this.props.gridWidth + "/" + numberColumns
     };
 
@@ -84,7 +83,7 @@ class Grid extends React.PureComponent {
           style={gridStyle}
         >
           {Array.from(
-            Array(numberColumns * Math.round(numberColumns * 1.3)).keys()
+            Array(numberColumns * Math.round(numberColumns * 1.4)).keys()
           ).map(index => (
             <div className="gridItem" key={index} ref={this.addElementRef} />
           ))}
@@ -103,5 +102,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { updateSelection, updateColumns }
+  { updateSelection }
 )(Grid);

@@ -1,0 +1,6 @@
+-fix possibility of double occurences of area names
+-complete ratio-redux. connect to ratio of showcase-container (later resizable component).
+	-develop algorithm for calculating showcase-container sizes. calculate max possible width to implement ratio in a
+	 way that height fits in window (later. maybe css ratio way to solve it?)
+	-add signs later in the tool (according to ratio) (see where 100vh would be reached)?
+-find more efficient and clean way of calculating max and min of column and rows (ShowCase component)

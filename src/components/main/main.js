@@ -7,7 +7,7 @@ import Show from "./show/show.js";
 class Main extends React.PureComponent {
   render() {
     // make number of columns dependent on viewport width
-    var viewportWidth =
+    const viewportWidth =
       window.innerWidth || document.documentElement.clientWidth;
 
     var gridWidth = 96 + "vw";
@@ -26,7 +26,7 @@ class Main extends React.PureComponent {
           <Grid gridWidth={gridWidth} />
         </div>
         <div className="showContainer" style={{ width: gridWidth }}>
-          <Show />
+          <Show width={gridWidth} />
         </div>
       </div>
     );

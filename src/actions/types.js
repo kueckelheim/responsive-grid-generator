@@ -1,2 +1,3 @@
 export const UPDATE_SELECTION = "UPDATE_SELECTION";
 export const UPDATE_AREAS = "UPDATE_AREAS";
+export const UPDATE_RATIO = "UPDATE_RATIO";
