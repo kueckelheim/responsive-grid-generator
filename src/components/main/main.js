@@ -11,10 +11,10 @@ class Main extends React.PureComponent {
       window.innerWidth || document.documentElement.clientWidth;
 
     var gridWidth = 96 + "vw";
-    var gridHeight = 110 + "vw";
+    var gridHeight = 100 + "vh";
     if (viewportWidth > 1000) {
       gridWidth = 46 + "vw";
-      gridHeight = 70 + "vw";
+      gridHeight = 95 + "vh";
     }
 
     return (
@@ -25,7 +25,10 @@ class Main extends React.PureComponent {
         >
           <Grid gridWidth={gridWidth} />
         </div>
-        <div className="showContainer" style={{ width: gridWidth }}>
+        <div
+          className="showContainer"
+          style={{ width: gridWidth, height: gridHeight }}
+        >
           <Show width={gridWidth} />
         </div>
       </div>

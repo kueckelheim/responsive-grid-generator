@@ -24,39 +24,10 @@ class ShowCase extends React.PureComponent {
       totalColumns = [].concat.apply([], totalColumns);
       totalRows = [].concat.apply([], totalRows);
       // get minimums and maximums
-      var maxCol, minCol, maxRow, minRow, i, ii;
-      for (i = 0; i < totalColumns.length; i++) {
-        if (maxCol == null) {
-          maxCol = totalColumns[i];
-        } else {
-          if (totalColumns[i] > maxCol) {
-            maxCol = totalColumns[i];
-          }
-        }
-        if (minCol == null) {
-          minCol = totalColumns[i];
-        } else {
-          if (totalColumns[i] < minCol) {
-            minCol = totalColumns[i];
-          }
-        }
-      }
-      for (ii = 0; ii < totalRows.length; ii++) {
-        if (maxRow == null) {
-          maxRow = totalRows[ii];
-        } else {
-          if (totalRows[ii] > maxRow) {
-            maxRow = totalRows[ii];
-          }
-        }
-        if (minRow == null) {
-          minRow = totalRows[ii];
-        } else {
-          if (totalRows[ii] < minRow) {
-            minRow = totalRows[ii];
-          }
-        }
-      }
+      var maxCol = Math.max(...totalColumns);
+      var maxRow = Math.max(...totalRows);
+      var minCol = Math.min(...totalColumns);
+      var minRow = Math.min(...totalRows);
       // get number of columns and rows
       const numberCols = maxCol - minCol + 1;
       const numberRows = maxRow - minRow + 1;
