@@ -3,11 +3,6 @@ import "./show.scss";
 
 import ShowCase from "./showCase.js";
 
-// import { connect } from "react-redux";
-// import { updateRatio } from "../../../actions/config.js";
-// import { updateRatio2 } from "../../../actions/config.js";
-import PropTypes from "prop-types";
-
 import { Resizable } from "re-resizable";
 
 class Show extends React.PureComponent {
@@ -64,7 +59,7 @@ class Show extends React.PureComponent {
     // get width and height of current rectangle
     var width = this.state.widthCurrent;
     var height = this.state.heightCurrent;
-    // then adjust to change through selection
+    // then adjust with selection-deltas
     width = width + d.width;
     height = height + d.height;
 
@@ -83,7 +78,7 @@ class Show extends React.PureComponent {
     const ratio = e.target.value;
     // only options with values selectable
     if (ratio != "") {
-      // split at the double point
+      // split at double point
       var ratioSplit = ratio.split(":");
       // calculate widthCurrent and heightCurrent with selected ratio
       this.updateSize(
