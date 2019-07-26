@@ -1,4 +1,3 @@
 export const UPDATE_SELECTION = "UPDATE_SELECTION";
 export const UPDATE_AREAS = "UPDATE_AREAS";
-// export const UPDATE_RATIO = "UPDATE_RATIO";
-// export const UPDATE_RATIO2 = "UPDATE_RATIO2";
+export const UPDATE_VIEWPORT = "UPDATE_VIEWPORT";

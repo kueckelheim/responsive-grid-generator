@@ -1,6 +1,15 @@
 .main {
   display: grid;
   grid-template-columns: 1fr;
+  width: 100%;
+  .gridContainer {
+    height: 90vh;
+    width: 100%;
+  }
+  .showContainer {
+    height: 90vh;
+    width: 100%;
+  }
 }
 @media (min-width: 1000px) {
   .main {

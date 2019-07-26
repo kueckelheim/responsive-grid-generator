@@ -1,23 +1,21 @@
-// import { UPDATE_RATIO, UPDATE_RATIO2 } from "../actions/types";
+import { UPDATE_VIEWPORT } from "../actions/types";
 
 const initialState = {
-  numberColumns: 15
+  numberColumns: 15,
+  numColView: 5,
+  numRowView: 3
 };
 
 export default function(state = initialState, action) {
   // check for which action
   switch (action.type) {
-    // case UPDATE_RATIO:
-    //   return {
-    //     ...state,
-    //     [action.name]: action.data
-    //   };
-    // case UPDATE_RATIO2:
-    //   return {
-    //     ...state,
-    //     ratioCols: action.width,
-    //     ratioRows: action.height
-    //   };
+    case UPDATE_VIEWPORT:
+      return {
+        ...state,
+        numColView: action.numColView,
+        numRowView: action.numRowView
+      };
+
     default:
       return state;
   }

@@ -1,12 +1,7 @@
-// import { UPDATE_RATIO, UPDATE_RATIO2 } from "./types";
+import { UPDATE_VIEWPORT } from "./types";
 
-// export const updateRatio = (data, name) => ({
-//   type: UPDATE_RATIO,
-//   data,
-//   name
-// });
-// export const updateRatio2 = (width, height) => ({
-//   type: UPDATE_RATIO2,
-//   width,
-//   height
-// });
+export const updateViewPort = (numColView, numRowView) => ({
+  type: UPDATE_VIEWPORT,
+  numColView,
+  numRowView
+});

@@ -1,7 +1,7 @@
 import React from "react";
 import "./show.scss";
 
-import ShowCase from "./showCase.js";
+// import ShowCase from "./showCase.js";
 
 import { Resizable } from "re-resizable";
 
@@ -77,7 +77,7 @@ class Show extends React.PureComponent {
     // get selected value
     const ratio = e.target.value;
     // only options with values selectable
-    if (ratio != "") {
+    if (ratio !== "") {
       // split at double point
       var ratioSplit = ratio.split(":");
       // calculate widthCurrent and heightCurrent with selected ratio
@@ -182,8 +182,8 @@ class Show extends React.PureComponent {
           ref={this.selector}
           style={{
             display: "flex",
-            justifyContent: "center",
-            width: this.props.width
+            justifyContent: "center"
+            // width: this.props.width
           }}
         >
           <Resizable
@@ -195,6 +195,7 @@ class Show extends React.PureComponent {
             onResizeStop={(e, direction, ref, d, event) => {
               this.handleResizeStop(d);
             }}
+            // bounds={"parent"}
           />
         </div>
       </div>

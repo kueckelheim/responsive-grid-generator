@@ -1,5 +1,5 @@
 import React from "react";
-import "./grid.scss";
+import "./overlay.scss";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -35,6 +35,13 @@ class Overlay extends React.PureComponent {
   };
 
   render() {
+    // style the grid
+    const gridStyle = {
+      display: "grid",
+      gridTemplateColumns: "repeat(" + this.props.numCol + ", 40px)",
+      gridTemplateRows: "repeat(" + this.props.numRow + ", 40px)"
+    };
+
     const areas = this.props.areas;
 
     var overlayItems;
@@ -76,7 +83,7 @@ class Overlay extends React.PureComponent {
     }
 
     return (
-      <div className="overlay" style={this.props.gridStyle}>
+      <div className="overlay" style={gridStyle}>
         {overlayItems}
       </div>
     );

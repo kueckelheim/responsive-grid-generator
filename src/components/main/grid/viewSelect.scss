@@ -1,0 +1,44 @@
+.viewSelect {
+  color: white;
+  width: 100%;
+  height: 100%;
+  .top {
+    position: absolute;
+    top: -20px;
+    .topTool {
+      border-top: 2px solid black;
+      border-right: 2px solid black;
+      border-left: 2px solid black;
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+  }
+  .left {
+    position: absolute;
+    left: -20px;
+    top: 0;
+    .leftTool {
+      border-top: 2px solid black;
+      border-bottom: 2px solid black;
+      border-left: 2px solid black;
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }
+  .lineVertical {
+    width: 2px;
+    background: black;
+    position: absolute;
+    top: 0;
+  }
+  .lineHorizontal {
+    height: 2px;
+    background: black;
+    position: absolute;
+    left: 0;
+  }
+}
