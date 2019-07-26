@@ -2,13 +2,14 @@
   display: grid;
   grid-template-columns: 1fr;
   width: 100%;
+  margin-top: 2%;
   .gridContainer {
     height: 90vh;
-    width: 100%;
+    width: 99%;
   }
   .showContainer {
     height: 90vh;
-    width: 100%;
+    width: 95%;
   }
 }
 @media (min-width: 1000px) {

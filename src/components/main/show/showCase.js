@@ -12,8 +12,6 @@ class ShowCase extends React.PureComponent {
 
   render() {
     var showCaseStyle, gridItems;
-    //  replace later with config value
-    const ratio = this.props.config.ratioRows / this.props.config.ratioCols;
     // if selection has been made, create gridSystem
     if (this.props.areas.length > 0) {
       // number of columns = maximum selected column - minimum
@@ -26,30 +24,29 @@ class ShowCase extends React.PureComponent {
       // get minimums and maximums
       var maxCol = Math.max(...totalColumns);
       var maxRow = Math.max(...totalRows);
-      var minCol = Math.min(...totalColumns);
-      var minRow = Math.min(...totalRows);
-      // get number of columns and rows
-      const numberCols = maxCol - minCol + 1;
-      const numberRows = maxRow - minRow + 1;
-      // https://codepen.io/michellebarker/post/building-an-aspect-ratio-css-grid-layout
+      // style the showCase according to selected viewport and selected areas:
+      // example:
+      //  10 columns = 100vw, total columns 10 --> grid-template-columns: repeat(10, 10%);
+      //  8 rows = 100vh, total rows 20 --> grid-template-rows: repeat(20, 100/8 %);
       showCaseStyle = {
-        gridTemplateColumns: "repeat(" + numberCols + ", 1fr)",
-        // height depends on ratio
+        // width depends on selected viewport/number of cols in viewport
+        gridTemplateColumns:
+          "repeat(" + maxCol + "," + 100 / this.props.config.numColView + "% )",
+        // height depends on selected viewport/number of rows in viewport
         gridTemplateRows:
-          "repeat(" + numberRows + ", " + 100 / (numberCols * ratio) + "%  )"
+          "repeat(" + maxRow + "," + 100 / this.props.config.numRowView + "% )"
       };
       // generate and style grid items according to selected areas
-      // their start and end points now depend on the minimum and maximum of the selected grids
+      // their start and end points depend on the minimum and maximum of the selected grids
       gridItems = this.props.areas.map((x, index) => (
         <div
           style={{
             display: "initial",
-            gridRowStart: Math.min(...x.rows) - (minRow - 1),
-            gridRowEnd: Math.max(...x.rows) + 1 - (minRow - 1),
-            gridColumnStart: Math.min(...x.columns) - (minCol - 1),
-            gridColumnEnd: Math.max(...x.columns) + 1 - (minCol - 1),
-            background: "white",
-            border: "1px solid black"
+            gridRowStart: Math.min(...x.rows),
+            gridRowEnd: Math.max(...x.rows) + 1,
+            gridColumnStart: Math.min(...x.columns),
+            gridColumnEnd: Math.max(...x.columns) + 1,
+            background: x.color
           }}
           key={index}
         />

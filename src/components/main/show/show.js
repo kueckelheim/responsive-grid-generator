@@ -1,7 +1,8 @@
 import React from "react";
 import "./show.scss";
 
-// import ShowCase from "./showCase.js";
+import Resolutions from "./resolutions.js";
+import ShowCase from "./showCase.js";
 
 import { Resizable } from "re-resizable";
 
@@ -63,7 +64,7 @@ class Show extends React.PureComponent {
     width = width + d.width;
     height = height + d.height;
 
-    // update ratio and sizes in store
+    // update ratio and sizes in state
     this.setState({
       ratio: "",
       ratioCols: width,
@@ -118,72 +119,43 @@ class Show extends React.PureComponent {
 
     return (
       <div className="show">
-        <div className="container">
-          <div className="boxContainer">
-            <h2>View:</h2>
-            <input type="checkbox" />
-            <input type="checkbox" />
-            <input type="checkbox" />
-            <input type="checkbox" />
+        <div className="ratioContainer">
+          <div className="container">
+            <h2>Ratio/Resolution:</h2>
+            <select
+              name="ratio"
+              id="ratio"
+              value={this.state.ratio}
+              onChange={this.handleSelection}
+            >
+              <Resolutions />
+            </select>
           </div>
-          <div className="ratioContainer">
-            <div className="container">
-              <h2>Ratio:</h2>
-              <select
-                name="ratio"
-                id="ratio"
-                value={this.state.ratio}
-                onChange={this.handleSelection}
-              >
-                <option value="">select</option>
-                <option value="17:10">17:10 (Large Screen)</option>
-                <option value="10:15">10:15 (Laptop)</option>
-                <option value="15:11">15:11 (IPad)</option>
-                <option value="13:7">13:7 (Galaxy S6)</option>
-              </select>
-            </div>
-            <div className="container">
-              <input
-                type="number"
-                min="1"
-                onChange={this.onChange}
-                value={this.state.ratioCols}
-                name="ratioCols"
-              />
-              X
-              <input
-                type="number"
-                min="1"
-                onChange={this.onChange}
-                value={this.state.ratioRows}
-                name="ratioRows"
-              />
-            </div>
+          <div className="container">
+            <input
+              type="number"
+              min="1"
+              onChange={this.onChange}
+              value={this.state.ratioCols}
+              name="ratioCols"
+            />
+            X
+            <input
+              type="number"
+              min="1"
+              onChange={this.onChange}
+              value={this.state.ratioRows}
+              name="ratioRows"
+            />
           </div>
         </div>
-        {/* Include Resizable Component */}
-        {/* <div
-          className="resizable"
-          style={{
-            width: this.props.width,
-            height:
-              "calc(" +
-              this.props.width +
-              "*" +
-              this.props.config.ratioRows / this.props.config.ratioCols +
-              ")"
-          }}
-          ref={this.selector}
-        >
-          <ShowCase width={this.props.width} />
-        </div> */}
+
         <div
           className="resizable"
           ref={this.selector}
           style={{
             display: "flex",
             justifyContent: "center"
-            // width: this.props.width
           }}
         >
           <Resizable
@@ -196,7 +168,10 @@ class Show extends React.PureComponent {
               this.handleResizeStop(d);
             }}
             // bounds={"parent"}
-          />
+          >
+            {" "}
+            <ShowCase />
+          </Resizable>
         </div>
       </div>
     );

@@ -1,12 +1,4 @@
 -fix possibility of double occurences of area names
--complete ratio-redux. connect to ratio of showcase-container (later resizable component).
-		-create little handlers on the top and on the left side of the layouting tool where users can select the 
-		 viewpoint rectangle
-		-according to this rectangle, count number of columns and rows. This makes it easy to use percentages
-			example: 10 columns = 100vw, total columns 10 --> grid-template-columns: repeat(10, 10%);
-				 8 rows = 100vh, total rows 20 --> grid-template-columns: repeat(20, 100/8 %);
--style grid that includes layout-tool and show-component with normal css (50%-50% for large screens, 100%-100% 
- for small screens)
-	-use clienBoundingRect to calculate number of squares in layout tool
-		(set number of pixels per square and then calculate how many pixels fit there)
-	-rerender on screen resize
+-rerender on screen resize
+-resizable ShowCase: set resize boundaries to parent element's sizes
+-add real world device sizes to ratio/resolution selection

@@ -1,65 +1,36 @@
 .show {
   height: 100%;
   width: 100%;
-  padding-top: 10px;
-  .container {
-    height: 20%;
-    .boxContainer {
+
+  .ratioContainer {
+    background: lighten(grey, 20%);
+    color: white;
+    height: 15%;
+    border: 1px solid grey;
+    .container {
       display: flex;
-      width: 100%;
-      height: 10%;
       justify-content: center;
       align-items: center;
-      background: darken(grey, 10%);
-      padding-top: 20px;
-      padding-bottom: 20px;
-
+      padding-top: 15px;
       h2 {
         margin: 0;
-        margin-right: 10px;
-        margin-left: 10px;
-        color: lighten(grey, 45%);
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      select {
+        height: 20px;
+        color: darken(grey, 10%);
+        font-size: 15px;
       }
       input {
-        width: 10%;
-        height: 20px;
-      }
-    }
-    .ratioContainer {
-      height: 50%;
-      width: 100%;
-      background: darken(grey, 20%);
-      padding-top: 15px;
-      padding-bottom: 15px;
-      color: lighten(grey, 40%);
-      .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        h2 {
-          margin: 0;
-          padding-left: 10px;
-          padding-right: 10px;
-        }
-        select {
-          width: 25%;
-          height: 20px;
-          color: darken(grey, 10%);
-          font-size: 15px;
-        }
-        input {
-          width: 55px;
-          margin-right: 5px;
-          margin-left: 5px;
-        }
+        width: 55px;
+        margin-right: 5px;
+        margin-left: 5px;
       }
     }
   }
   .resizable {
-    // height: 44vh;
-    // width: 66vh;
-    height: 80%;
+    height: 85%;
+    border: 1px solid grey;
   }
 }
