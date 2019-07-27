@@ -33,6 +33,14 @@ class ShowCase extends React.PureComponent {
         gridTemplateColumns:
           "repeat(" + maxCol + "," + 100 / this.props.config.numColView + "% )",
         // height depends on selected viewport/number of rows in viewport
+        // gridTemplateRows:
+        //   "repeat(" +
+        //   maxRow +
+        //   "," +
+        //   100 /
+        //     (this.props.config.numColView *
+        //       (this.props.ratioRows / this.props.ratioCols)) +
+        //   "%)"
         gridTemplateRows:
           "repeat(" + maxRow + "," + 100 / this.props.config.numRowView + "% )"
       };

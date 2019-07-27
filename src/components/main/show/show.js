@@ -33,7 +33,7 @@ class Show extends React.PureComponent {
     // update state
     this.setState({
       widthParent: rect.width,
-      heightParent: rect.height
+      heightParent: rect.height - 50
     });
   };
 
@@ -113,25 +113,23 @@ class Show extends React.PureComponent {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      border: "solid 1px #ddd",
-      background: "#f0f0f0"
+      background: "#f0f0f0",
+      marginTop: 10
     };
 
     return (
       <div className="show">
         <div className="ratioContainer">
-          <div className="container">
-            <h2>Ratio/Resolution:</h2>
-            <select
-              name="ratio"
-              id="ratio"
-              value={this.state.ratio}
-              onChange={this.handleSelection}
-            >
-              <Resolutions />
-            </select>
-          </div>
-          <div className="container">
+          <h2>Ratio/Resolution:</h2>
+          <select
+            name="ratio"
+            id="ratio"
+            value={this.state.ratio}
+            onChange={this.handleSelection}
+          >
+            <Resolutions />
+          </select>
+          <div className="input">
             <input
               type="number"
               min="1"
@@ -155,7 +153,8 @@ class Show extends React.PureComponent {
           ref={this.selector}
           style={{
             display: "flex",
-            justifyContent: "center"
+            justifyContent: "center",
+            height: "85%"
           }}
         >
           <Resizable
@@ -167,10 +166,15 @@ class Show extends React.PureComponent {
             onResizeStop={(e, direction, ref, d, event) => {
               this.handleResizeStop(d);
             }}
-            // bounds={"parent"}
+            maxWidth={this.state.widthParent}
+            maxHeight={this.state.heightParent}
           >
             {" "}
-            <ShowCase />
+            <ShowCase
+              ratioCols={this.state.ratioCols}
+              ratioRows={this.state.ratioRows}
+              widthCurrent={this.state.widthCurrent}
+            />
           </Resizable>
         </div>
       </div>
