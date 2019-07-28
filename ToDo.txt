@@ -3,3 +3,4 @@
 -add question mark symbols with on-hover explanations
 -add option to remove height selector which results in columns width = row width, calculate using the ratio
 	-if width of col = 10% and ratio = 16/9 --> row = 100% / (numberColView * 16/9) ??? (options: custom, static)
+-move sidebar to the left

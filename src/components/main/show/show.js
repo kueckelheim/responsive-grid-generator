@@ -14,8 +14,8 @@ class Show extends React.PureComponent {
       widthParent: 0,
       heightParent: 0,
       ratio: "17:10",
-      ratioCols: 17,
-      ratioRows: 10,
+      ratioCols: 16,
+      ratioRows: 9,
       widthCurrent: 0,
       heightCurrent: 0
     };
@@ -120,7 +120,7 @@ class Show extends React.PureComponent {
     return (
       <div className="show">
         <div className="ratioContainer">
-          <h2>Ratio/Resolution:</h2>
+          <div className="text">Ratio/Resolution:</div>
           <select
             name="ratio"
             id="ratio"
@@ -129,22 +129,24 @@ class Show extends React.PureComponent {
           >
             <Resolutions />
           </select>
-          <div className="input">
-            <input
-              type="number"
-              min="1"
-              onChange={this.onChange}
-              value={this.state.ratioCols}
-              name="ratioCols"
-            />
-            X
-            <input
-              type="number"
-              min="1"
-              onChange={this.onChange}
-              value={this.state.ratioRows}
-              name="ratioRows"
-            />
+          <div className="inputContainer">
+            <div className="input">
+              <input
+                type="number"
+                min="1"
+                onChange={this.onChange}
+                value={this.state.ratioCols}
+                name="ratioCols"
+              />
+              X
+              <input
+                type="number"
+                min="1"
+                onChange={this.onChange}
+                value={this.state.ratioRows}
+                name="ratioRows"
+              />
+            </div>
           </div>
         </div>
 
@@ -154,7 +156,7 @@ class Show extends React.PureComponent {
           style={{
             display: "flex",
             justifyContent: "center",
-            height: "85%"
+            height: "70%"
           }}
         >
           <Resizable

@@ -54,7 +54,9 @@ class ShowCase extends React.PureComponent {
             gridRowEnd: Math.max(...x.rows) + 1,
             gridColumnStart: Math.min(...x.columns),
             gridColumnEnd: Math.max(...x.columns) + 1,
-            background: x.color
+            background: x.color,
+            border: "1px solid white",
+            margin: 0
           }}
           key={index}
         />

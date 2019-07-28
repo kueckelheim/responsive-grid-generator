@@ -1,0 +1,23 @@
+.code {
+  border-top: 2px solid darken(#1e2432, 10%);
+  color: #eef0f2;
+  padding-left: 10px;
+  padding-right: 10px;
+  .codeBox {
+    margin: 0 auto;
+    border: 2px solid darken(#1e2432, 10%);
+    background: darken(#1e2432, 10%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2px;
+    font-family: Courier, monospace;
+    .css {
+      background: darken(#1e2432, 0%);
+      padding: 8px;
+    }
+    .html {
+      background: darken(#1e2432, 0%);
+      padding: 8px;
+    }
+  }
+}

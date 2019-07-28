@@ -21,7 +21,7 @@ class Grid extends React.PureComponent {
     const rect = this.selector.current.getBoundingClientRect();
     // cols and rows should have 40x40px
     // identify number of cols and rows
-    const numCol = Math.floor(rect.width / 40) - 1;
+    const numCol = Math.floor(rect.width / 40);
     const numRow = Math.floor(rect.height / 40);
     // update state
     this.setState({
