@@ -7,6 +7,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(4, 36vh);
+  grid-auto-rows: auto;
   .logoContainer {
     grid-column-start: 1;
     grid-column-end: 2;
@@ -39,9 +40,9 @@
     grid-column-start: 1;
     grid-column-end: 6;
     grid-row-start: 4;
-    grid-row-end: 5;
     margin: 0;
     background: lighten(#1e2432, 20%);
+    min-height: 400px;
   }
   .outputButton {
     display: none;
@@ -76,7 +77,6 @@
       grid-column-start: 1;
       grid-column-end: 2;
       grid-row-start: 4;
-      grid-row-end: 5;
     }
   }
 

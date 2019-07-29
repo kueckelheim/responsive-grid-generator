@@ -14,7 +14,6 @@ class ShowCase extends React.PureComponent {
     var showCaseStyle, gridItems;
     // if selection has been made, create gridSystem
     if (this.props.areas.length > 0) {
-      // number of columns = maximum selected column - minimum
       // get total selected columns and rows
       var totalColumns = this.props.areas.map(x => x.columns);
       var totalRows = this.props.areas.map(x => x.rows);
