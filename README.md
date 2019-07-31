@@ -1,68 +1,30 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Responsive Grid Generator
 
-## Available Scripts
+A clickable grid generator. Blazing fast website-layout generation with an intuitive and interactive tool.
 
-In the project directory, you can run:
+## Visit website
 
-### `npm start`
+[Visit Responsive Grid Generator](https://responsive-grid-generator.netlify.com/)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Author
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- [Erik Kückelheim](https://github.com/kueckelheim)
+- [Portfolio](https://erik-kueckelheim.com/)
 
-### `npm test`
+## Built With
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React - The web framework used
+- [Create React App](https://github.com/facebook/create-react-app) - easy to use React-Babel-Webpack configuration
+- [npm](https://github.com/npm/cli) - a JavaScript package manager
 
-### `npm run build`
+## JavaScript libraries
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [redux](https://github.com/reduxjs/redux) - Predictable state container for JavaScript apps. Used to make some props accessible accross components
+- [react-redux](https://github.com/reduxjs/react-redux) - React binding for [Redux](https://github.com/reduxjs/redux)
+- [redux-thunk](https://github.com/reduxjs/redux-thunk) - used for asynchronous axios calls
+- [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension) - Used during development. Gives you an overview of the current store and its changes in a browser's DevTools.
+- [node-sass](https://github.com/sass/node-sass) - used in order to be able to work with Sass
+- [react-lowlight](https://github.com/rexxars/react-lowlight) - used for automatic syntax highlighting of produced code
+- [highlight.js](https://highlightjs.org/) - syntax highlighter on which react-lowlight ist built on
+- [re-resizable](https://github.com/bokuweb/re-resizable) - a resizable component for React. Used for resizable show component and Viewport-selectors
+- [react-ds](https://github.com/aurbano/react-ds) - touch friendly drag-to-select-component. Used for area-selection
