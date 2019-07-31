@@ -21,7 +21,6 @@ A clickable grid generator. Blazing fast website-layout generation with an intui
 
 - [redux](https://github.com/reduxjs/redux) - Predictable state container for JavaScript apps. Used to make some props accessible accross components
 - [react-redux](https://github.com/reduxjs/react-redux) - React binding for [Redux](https://github.com/reduxjs/redux)
-- [redux-thunk](https://github.com/reduxjs/redux-thunk) - used for asynchronous axios calls
 - [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension) - Used during development. Gives you an overview of the current store and its changes in a browser's DevTools.
 - [node-sass](https://github.com/sass/node-sass) - used in order to be able to work with Sass
 - [react-lowlight](https://github.com/rexxars/react-lowlight) - used for automatic syntax highlighting of produced code
