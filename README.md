@@ -25,6 +25,6 @@ A clickable grid generator. Blazing fast website-layout generation with an intui
 - [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension) - Used during development. Gives you an overview of the current store and its changes in a browser's DevTools.
 - [node-sass](https://github.com/sass/node-sass) - used in order to be able to work with Sass
 - [react-lowlight](https://github.com/rexxars/react-lowlight) - used for automatic syntax highlighting of produced code
-- [highlight.js](https://highlightjs.org/) - syntax highlighter on which react-lowlight ist built on
+- [highlight.js](https://highlightjs.org/) - syntax highlighter on which react-lowlight is built on
 - [re-resizable](https://github.com/bokuweb/re-resizable) - a resizable component for React. Used for resizable show component and Viewport-selectors
 - [react-ds](https://github.com/aurbano/react-ds) - touch friendly drag-to-select-component. Used for area-selection
