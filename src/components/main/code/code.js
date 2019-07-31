@@ -18,6 +18,17 @@ class Code extends React.PureComponent {
     config: PropTypes.object.isRequired
   };
 
+  copyStringToClipboard = str => {
+    var el = document.createElement("textarea");
+    el.value = str;
+    el.setAttribute("readonly", "");
+    el.style = { position: "absolute", left: "-9999px" };
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand("copy");
+    document.body.removeChild(el);
+  };
+
   render() {
     var html = "";
     var css = "";
@@ -54,7 +65,7 @@ class Code extends React.PureComponent {
         maxRow +
         ", " +
         100 / this.props.config.numRowView +
-        "% );}\n\n" +
+        "% );\n}\n" +
         this.props.areas
           .map(
             x =>
@@ -79,17 +90,33 @@ class Code extends React.PureComponent {
     }
     return (
       <div className="code">
-        <h1>Your Code</h1>
-        <div className="codeBox">
-          <div className="html">
-            <div className="headline">HTML</div>
-            <Lowlight language="xml" value={html} />
+        <div className="headline">Your Code</div>
+        <div className="codeBoxContainer">
+          <div className="codeBox">
+            <div className="head">HTML</div>
+            <div className="lowlight">
+              <Lowlight language="xml" value={html} />
+            </div>
+            {/* Copy to clipboard button */}
+            {// check if supported by browser
+            document.queryCommandSupported("copy") && (
+              <button onClick={this.copyStringToClipboard(html)}>
+                Copy to Clipboard
+              </button>
+            )}
           </div>
-          <div className="css">
-            <div className="headline">CSS</div>
+          <div className="codeBox">
+            <div className="head css">CSS</div>
             <div className="lowlight">
               <Lowlight language="css" value={css} />
             </div>
+            {/* Copy to clipboard button */}
+            {// check if supported by browser
+            document.queryCommandSupported("copy") && (
+              <button onClick={this.copyStringToClipboard(css)}>
+                Copy to Clipboard
+              </button>
+            )}
           </div>
         </div>
       </div>

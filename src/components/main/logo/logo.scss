@@ -1,15 +1,28 @@
 .logo {
-  color: #eec643;
-  font-size: 30px;
+  color: darken(#eec643, 10%);
+  font-size: calc(1em + 1.5vw);
   padding-top: 30px;
-  padding-left: 10px;
-  font-weight: bold;
-
-  @media (max-width: 1000px) {
-    font-size: 20px;
+  padding-left: 35px;
+  text-shadow: 3px 1px lighten(#1e2432, 5%);
+  // font-family: "Arvo", serif;
+  font-family: "Raleway", sans-serif;
+  @media (max-width: 530px) {
+    font-size: calc(1em + 1vw);
   }
-  @media (max-width: 800px) {
-    padding-left: 40px;
-    font-size: 30px;
+  .container {
+    div {
+      float: left;
+      padding-left: 10px;
+    }
+  }
+  .simple {
+    clear: both;
+    font-size: 15px;
+    color: lighten(#daefb3, 10%);
+    font-family: "Raleway", sans-serif;
+    padding-left: 10px;
+    @media (max-width: 530px) {
+      font-size: 10px;
+    }
   }
 }

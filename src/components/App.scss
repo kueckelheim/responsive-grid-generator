@@ -3,5 +3,19 @@ body {
   // background: lighten(grey, 30%);
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  background: lighten(#1e2432, 10%);
+  // background: lighten(#1e2432, 10%);
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e2432+4,3f4c6b+61 */
+  background: #1e2432; /* Old browsers */
+  background: -moz-linear-gradient(top, #1e2432 4%, #3f4c6b 61%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #1e2432 4%,
+    #3f4c6b 61%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #1e2432 4%,
+    #3f4c6b 61%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e2432', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
 }
