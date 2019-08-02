@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 import Lowlight from "react-lowlight";
 import xml from "highlight.js/lib/languages/xml";
 import css from "highlight.js/lib/languages/css";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 // Then register them with lowlight
 Lowlight.registerLanguage("xml", xml);
@@ -16,17 +17,6 @@ class Code extends React.PureComponent {
   static propTypes = {
     areas: PropTypes.array.isRequired,
     config: PropTypes.object.isRequired
-  };
-
-  copyStringToClipboard = str => {
-    var el = document.createElement("textarea");
-    el.value = str;
-    el.setAttribute("readonly", "");
-    el.style = { position: "absolute", left: "-9999px" };
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand("copy");
-    document.body.removeChild(el);
   };
 
   render() {
@@ -98,12 +88,9 @@ class Code extends React.PureComponent {
               <Lowlight language="xml" value={html} />
             </div>
             {/* Copy to clipboard button */}
-            {// check if supported by browser
-            document.queryCommandSupported("copy") && (
-              <button onClick={this.copyStringToClipboard(html)}>
-                Copy to Clipboard
-              </button>
-            )}
+            <CopyToClipboard text={html}>
+              <button>Copy to Clipboard</button>
+            </CopyToClipboard>
           </div>
           <div className="codeBox">
             <div className="head css">CSS</div>
@@ -111,12 +98,9 @@ class Code extends React.PureComponent {
               <Lowlight language="css" value={css} />
             </div>
             {/* Copy to clipboard button */}
-            {// check if supported by browser
-            document.queryCommandSupported("copy") && (
-              <button onClick={this.copyStringToClipboard(css)}>
-                Copy to Clipboard
-              </button>
-            )}
+            <CopyToClipboard text={css}>
+              <button>Copy to Clipboard</button>
+            </CopyToClipboard>
           </div>
         </div>
       </div>

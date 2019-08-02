@@ -27,3 +27,4 @@ A clickable grid generator. Blazing fast website-layout generation with an intui
 - [highlight.js](https://highlightjs.org/) - syntax highlighter on which react-lowlight is built on
 - [re-resizable](https://github.com/bokuweb/re-resizable) - a resizable component for React. Used for resizable show component and Viewport-selectors
 - [react-ds](https://github.com/aurbano/react-ds) - touch friendly drag-to-select-component. Used for area-selection
+- [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard) - cross-browser copy-to-clipboard support
