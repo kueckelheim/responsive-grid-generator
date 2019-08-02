@@ -1,0 +1,27 @@
+.howTo {
+  color: darken(white, 10%);
+  font-family: "Raleway", sans-serif;
+  margin-top: 45px;
+  font-size: 15px;
+  ol {
+    padding-left: 30px;
+    .link {
+      text-decoration: underline;
+      cursor: pointer;
+      color: darken(white, 15%);
+    }
+  }
+  @media (max-width: 800px) {
+    margin-left: 40px;
+    margin-top: 25px;
+    font-size: 17px;
+    ol {
+      li {
+        padding: 4px;
+      }
+    }
+  }
+  @media (max-width: 360px) {
+    font-size: 15px;
+  }
+}

@@ -3,6 +3,7 @@ import "./main.scss";
 
 import Logo from "./logo/logo.js";
 import Grid from "./grid/grid.js";
+import HowTo from "./howTo/howTo.js";
 import Show from "./show/show.js";
 import Code from "./code/code.js";
 
@@ -13,7 +14,17 @@ class Main extends React.PureComponent {
       openOutput: false,
       showContainerClass: "showContainer close"
     };
+    this.code = React.createRef();
   }
+
+  // smooth scrolling to code component
+  handleClickCode = event => {
+    if (this.code.current) {
+      this.code.current.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  };
 
   // if !openOutput slide Show component in, otherwise slide it out
   clickOutput = () => {
@@ -42,10 +53,10 @@ class Main extends React.PureComponent {
         <div className={this.state.showContainerClass}>
           <Show />
         </div>
-        {/* <div className="outputButton" onClick={this.clickOutput}> */}
-        {/* <div className="text">Output</div> */}
-        {/* </div> */}
-        <div className="codeContainer">
+        <div className="howToContainer">
+          <HowTo onClickCode={() => this.handleClickCode()} />
+        </div>
+        <div className="codeContainer" ref={this.code}>
           <Code />
         </div>
       </div>

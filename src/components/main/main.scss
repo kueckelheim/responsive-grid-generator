@@ -35,6 +35,13 @@
     width: 90%;
     // margin: 0;
   }
+  .howToContainer {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 10;
+    grid-column-end: 12;
+    overflow: hidden;
+  }
   .codeContainer {
     grid-row-start: 7;
     grid-row-end: 13;
@@ -71,7 +78,7 @@
 
   @media (max-width: 800px) {
     grid-template-columns: repeat(11, 9.090909090909092%);
-    grid-template-rows: repeat(18, 16.666666666666668%);
+    grid-template-rows: repeat(20, 16.666666666666668%);
     grid-auto-rows: auto;
     // grid-gap: 10px;
     .logoContainer {
@@ -88,9 +95,17 @@
       grid-column-end: 12;
       width: 90%;
     }
-    .showContainer {
+    .howToContainer {
       grid-row-start: 7;
-      grid-row-end: 13;
+      grid-row-end: 9;
+      grid-column-start: 1;
+      grid-column-end: 12;
+      overflow: hidden;
+      background: #3f4c6b;
+    }
+    .showContainer {
+      grid-row-start: 9;
+      grid-row-end: 15;
       grid-column-start: 1;
       grid-column-end: 12;
       width: 100%;
@@ -98,77 +113,11 @@
       // padding: 20px;
     }
     .codeContainer {
-      grid-row-start: 13;
-      grid-row-end: 19;
+      grid-row-start: 15;
+      grid-row-end: 21;
       grid-column-start: 1;
       // grid-column-end: 12;
       height: 1100px;
     }
   }
-
-  // @media (max-width: 800px) {
-  //   .gridContainer {
-  //     width: 100vw;
-  //   }
-  //   // move out of the window
-  //   .showContainer {
-  //     position: absolute;
-  //     right: 0;
-  //     top: 0;
-  //     width: 100vw;
-  //   }
-  //   .close {
-  //     -webkit-transform: translate(100vw, 0);
-  //     -moz-transform: translate(100vw, 0);
-  //     -ms-transform: translate(100vw, 0);
-  //     -o-transform: translate(100vw, 0);
-  //     transform: translate(100vw, 0);
-  //     transition: all 0.5s ease-out;
-  //     -webkit-transition: all 0.5s ease-out;
-  //     -moz-transition: all 0.5s ease-out;
-  //     -ms-transition: all 0.5s ease-out;
-  //     -o-transition: all 0.5s ease-out;
-  //   }
-  //   .open {
-  //     -webkit-transform: translate(0, 0);
-  //     -moz-transform: translate(0, 0);
-  //     -ms-transform: translate(0, 0);
-  //     -o-transform: translate(0, 0);
-  //     transform: translate(0, 0);
-  //     transition: all 0.5s ease-out;
-  //     -webkit-transition: all 0.5s ease-out;
-  //     -moz-transition: all 0.5s ease-out;
-  //     -ms-transition: all 0.5s ease-out;
-  //     -o-transition: all 0.5s ease-out;
-  //   }
-  //   .outputButton {
-  //     display: initial;
-  //     position: absolute;
-  //     bottom: 50%;
-  //     right: 0;
-  //     width: 50px;
-  //     height: 100px;
-  //     background: lightblue;
-  //     border: 2px solid darken(lightblue, 5%);
-  //     border-top-left-radius: 20px;
-  //     border-bottom-left-radius: 20px;
-  //     cursor: pointer;
-  //     &:hover {
-  //       background: darken(lightblue, 15%);
-  //       border: 2px solid darken(lightblue, 20%);
-  //     }
-  //     .text {
-  //       color: darken(lightblue, 50%);
-  //       margin-top: 15px;
-  //       margin-right: 10px;
-  //       font-size: 20px;
-  //       transform: rotate(-90deg);
-  //       transform-origin: right bottom 0;
-  //       -webkit-transform: rotate(-90deg);
-  //       -moz-transform: rotate(-90deg);
-  //       -ms-transform: rotate(-90deg);
-  //       -o-transform: rotate(-90deg);
-  //     }
-  //   }
-  // }
 }
