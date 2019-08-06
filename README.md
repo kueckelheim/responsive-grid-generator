@@ -14,7 +14,6 @@ A clickable grid generator. Blazing fast website-layout generation with an intui
 ## Built With
 
 - React - The web framework used
-- [Create React App](https://github.com/facebook/create-react-app) - easy to use React-Babel-Webpack configuration
 - [npm](https://github.com/npm/cli) - a JavaScript package manager
 
 ## JavaScript libraries
