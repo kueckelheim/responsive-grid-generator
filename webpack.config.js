@@ -4,7 +4,7 @@ const path = require("path");
 const config = {
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "build"),
     filename: "bundle.js"
   },
   module: {
@@ -28,7 +28,7 @@ const config = {
     extensions: [".js", ".jsx"]
   },
   devServer: {
-    contentBase: "./dist"
+    contentBase: "./build"
   }
 };
 
