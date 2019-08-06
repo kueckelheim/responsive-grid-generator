@@ -3,7 +3,7 @@ import "./logo.scss";
 
 function Logo() {
   return (
-    <div className="logo">
+    <div className="logo" data-test="logo">
       <div className="container">
         <div>RESPONIVE</div>
         <div>GRID GENERATOR</div>
