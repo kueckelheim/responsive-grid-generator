@@ -28,3 +28,8 @@ A clickable grid generator. Blazing fast website-layout generation with an intui
 - [re-resizable](https://github.com/bokuweb/re-resizable) - a resizable component for React. Used for resizable show component and Viewport-selectors
 - [react-ds](https://github.com/aurbano/react-ds) - touch friendly drag-to-select-component. Used for area-selection
 - [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard) - cross-browser copy-to-clipboard support
+- [jest](https://github.com/facebook/jest) - easy to use testing library. Test runner and Assertion Library
+- [enzyme](https://github.com/airbnb/enzyme) - testing utility for React for testing React Components
+- [enzyme-adapter-react-16](https://www.npmjs.com/package/enzyme-adapter-react-16)
+- [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json) - Serializer that allows for Jest snapshot testing
+- [husky](https://github.com/typicode/husky) - allows to declare git hooks in package.json file to prevent 'bad' commits/pushs
