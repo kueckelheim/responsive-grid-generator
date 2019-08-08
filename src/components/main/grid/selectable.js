@@ -63,6 +63,7 @@ class Selectable extends React.PureComponent {
     return (
       <div
         className="selection"
+        data-test="selection"
         ref={ref => {
           // this setState call requires pureComponent (shallow comparison)
           this.setState({ ref });

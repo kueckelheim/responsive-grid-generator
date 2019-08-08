@@ -4,7 +4,7 @@ import "./howTo.scss";
 class HowTo extends React.PureComponent {
   render() {
     return (
-      <div className="howTo">
+      <div className="howTo" data-test="howTo">
         <ol>
           <li>Select rows/columns per viewport</li>
           <li>Draw areas</li>
